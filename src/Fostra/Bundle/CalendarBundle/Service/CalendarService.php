@@ -108,7 +108,8 @@ class CalendarService
     public function highlightDays(array $days = []) {
         $months = [];
         $day = new Day();
-        $day->setTimestamp(reset($days));
+        $timestamp = (int) reset($days);
+        $day->setTimestamp($timestamp);
         $markedDays = [];
 
         foreach ($days as $ts) {
